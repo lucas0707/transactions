@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.5.3'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id "org.flywaydb.flyway" version "6.4.1"
 }
 
 group = 'com.lucas'
@@ -14,10 +15,20 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation "io.springfox:springfox-boot-starter:3.0.0"
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 	runtimeOnly 'org.postgresql:postgresql'
+
+	implementation 'io.springfox:springfox-boot-starter:3.0.0'
+	implementation 'org.flywaydb:flyway-core'
+
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+flyway {
+	url = 'jdbc:postgresql://db:5432/transactions'
+	user = 'dev'
+	password = 'dev'
 }
 
 test {
