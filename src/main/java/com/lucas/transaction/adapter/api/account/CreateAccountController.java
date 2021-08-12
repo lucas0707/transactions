@@ -4,9 +4,13 @@ import com.lucas.transaction.adapter.DTO.account.CreateAccountRequestDTO;
 import com.lucas.transaction.service.account.CreateAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
-@RestController
+@Controller
 public class CreateAccountController {
     private final CreateAccountService createAccountService;
 

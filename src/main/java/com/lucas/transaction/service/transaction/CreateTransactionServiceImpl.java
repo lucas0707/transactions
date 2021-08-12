@@ -31,7 +31,6 @@ public class CreateTransactionServiceImpl implements CreateTransactionService{
     public void create(CreateTransactionDTO transactionDTO) throws Exception {
         try {
             validateAccount(transactionDTO.getAccount_id());
-
             validateOperationType(transactionDTO.getOperationTypeId());
 
             var transaction = createTransaction(transactionDTO);
@@ -41,16 +40,16 @@ public class CreateTransactionServiceImpl implements CreateTransactionService{
         }
     }
 
-    private void validateOperationType(int operationTypeId) throws OperationTypeNotFoundException {
+    private void validateOperationType(int operationTypeId) throws Exception {
         if (!operationRepository.hasOperationType(operationTypeId)) {
             throw new OperationTypeNotFoundException();
         }
     }
 
-    private void validateAccount(Long account_id) throws AccountNotFoundException {
-        if (!accountRepository.accountExists(account_id)){
-            throw new AccountNotFoundException();
-        }
+    private void validateAccount(Long account_id) throws Exception {
+       if (!accountRepository.accountExists(account_id)) {
+           throw new AccountNotFoundException();
+       }
     }
 
     private Transaction createTransaction(CreateTransactionDTO transactionDTO) {

@@ -17,3 +17,6 @@ run: configure
 
 run-local: build
 	- ${GRADLE_RUN} bootRun
+
+test:
+	- ${GRADLE_RUN} test

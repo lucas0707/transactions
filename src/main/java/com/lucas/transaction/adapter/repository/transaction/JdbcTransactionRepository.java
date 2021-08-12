@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-
 @Service
 public class JdbcTransactionRepository implements TransactionRepository {
     private final JdbcTemplate jdbcTemplate;
@@ -26,10 +24,11 @@ public class JdbcTransactionRepository implements TransactionRepository {
                         "Operation_Type_ID) " +
                         "values(?,?,?,?)",
                 transaction.getAmount(),
-                new Date(),
+                transaction.getEventDate(),
                 transaction.getAccountId(),
                 transaction.getOperationTypeId()
                 );
+
         return transaction;
     }
 }

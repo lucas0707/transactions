@@ -14,9 +14,8 @@ public class JdbcOperationTypeRepository implements OperationTypeRepository {
         this.jdbc = jdbc;
     }
 
-
     @Override
-    public boolean hasOperationType(int operationTypeId) {
+    public boolean hasOperationType(int operationTypeId) throws Exception {
         var result =  jdbc.queryForObject(
                 "select count(*) from operation_types where Operation_Type_ID = ?",
                 Integer.class,

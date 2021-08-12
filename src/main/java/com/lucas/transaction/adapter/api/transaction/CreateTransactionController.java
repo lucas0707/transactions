@@ -4,11 +4,12 @@ import com.lucas.transaction.adapter.DTO.transactions.CreateTransactionDTO;
 import com.lucas.transaction.service.transaction.CreateTransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 public class CreateTransactionController {
-    private CreateTransactionService transactionService;
+    private final CreateTransactionService transactionService;
 
     @Autowired
     public CreateTransactionController(CreateTransactionService transactionService) {

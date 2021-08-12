@@ -5,11 +5,14 @@ import java.io.Serializable;
 public class OperationType implements Serializable {
     private int operationTypeId;
 
-    private String description;
+    private final OperationDescription description;
 
-    public OperationType() {}
+    public OperationType(OperationDescription description) {
+        this.description = description;
+    }
 
-    public OperationType(String description) {
+    public OperationType(int operationTypeId, OperationDescription description) {
+        this.operationTypeId = operationTypeId;
         this.description = description;
     }
 
@@ -17,7 +20,7 @@ public class OperationType implements Serializable {
         return operationTypeId;
     }
 
-    public String getDescription() {
+    public OperationDescription getDescription() {
         return description;
     }
 }

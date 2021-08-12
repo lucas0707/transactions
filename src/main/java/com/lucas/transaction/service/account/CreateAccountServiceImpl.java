@@ -16,7 +16,7 @@ public class CreateAccountServiceImpl implements CreateAccountService {
     }
 
     @Override
-    public void create(String documentNumber) throws Exception {
+    public void create(String documentNumber) throws AccountCreationFailedException {
         try {
             var account = new Account(documentNumber);
             accountRepository.createAccount(account);

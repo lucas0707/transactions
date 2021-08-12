@@ -6,15 +6,13 @@ import java.util.Date;
 public class Transaction implements Serializable {
     private Long transactionId;
 
-    private double amount;
+    private final double amount;
 
-    private Long accountId;
+    private final Long accountId;
 
-    private int operationTypeId;
+    private final int operationTypeId;
 
-    private Date eventDate;
-
-    public Transaction(){}
+    private final Date eventDate;
 
     public Transaction(double amount, Long accountId, int operationTypeId) {
         this.amount = amount;
