@@ -1,7 +1,6 @@
 package com.lucas.transaction.unit.adapter.api.account;
 
 import com.lucas.transaction.adapter.DTO.account.AccountDetailsResponseDTO;
-import com.lucas.transaction.adapter.DTO.account.CreateAccountRequestDTO;
 import com.lucas.transaction.adapter.api.account.GetAccountController;
 import com.lucas.transaction.service.account.GetAccountService;
 import org.junit.jupiter.api.BeforeEach;

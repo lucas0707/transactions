@@ -1,6 +1,5 @@
 package com.lucas.transaction.unit.adapter.api.transaction;
 
-import com.lucas.transaction.adapter.DTO.account.CreateAccountRequestDTO;
 import com.lucas.transaction.adapter.DTO.transactions.CreateTransactionDTO;
 import com.lucas.transaction.adapter.api.transaction.CreateTransactionController;
 import com.lucas.transaction.service.transaction.CreateTransactionService;
