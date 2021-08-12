@@ -33,7 +33,6 @@ public class CreateTransactionServiceTests {
 
     @BeforeEach
     public void init() {
-
         this.createTransactionService = new CreateTransactionServiceImpl(
                 transactionRepository,
                 accountRepository,
